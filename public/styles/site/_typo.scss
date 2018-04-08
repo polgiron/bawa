@@ -1,0 +1,14 @@
+.heading-3 {
+  font-family: $font-family;
+  font-size: 4rem;
+  color: $color-white;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: inline-block;
+  padding: 0 .2em;
+  margin-bottom: -4rem;
+  background: $color-black;
+  z-index: 2;
+  position: relative;
+}

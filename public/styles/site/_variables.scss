@@ -1,3 +1,23 @@
-// Override Bootstrap variables in this file, e.g.
+$color-white: #fff;
+$color-white-2: #f9fcfe;
+$color-black: #000;
+$color-black-2: #1c1c1c;
 
-$font-size-base: 14px;
+// $content-max-width: 1600px;
+$content-max-width: 1400px;
+$header-height: 56px;
+$padding-section: 4rem;
+
+// $clip-height: 6rem;
+$clip-height: 10vw;
+
+// $font-family: 'Open Sans', sans-serif;
+$font-family: 'Raleway', sans-serif;
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+$screen-xlg-min: 1400px;

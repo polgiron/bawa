@@ -1,0 +1,142 @@
+.work {
+  background: $color-black-2;
+  position: relative;
+  z-index: 4;
+  // padding: 4rem;
+  // background: url("/images/vertical-waves.png") repeat;
+
+  .block-revealer__content {
+    height: 100%;
+  }
+}
+
+.section-clip {
+  position: relative;
+
+  &:nth-child(odd) {
+    &:before,
+    &:after {
+      content: '';
+      background: $color-black-2;
+      // background: red;
+      height: $clip-height;
+      max-height: 200px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      z-index: 100;
+    }
+
+    &:before {
+      top: 1px;
+      // clip-path: polygon(0 100%, 100% 0, 100% 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 95%);
+      transform: translateY(-100%);
+    }
+
+    &:after {
+      bottom: 1px;
+      clip-path: polygon(0 5%, 0 0, 100% 0, 100% 100%);
+      transform: translateY(100%);
+    }
+  }
+
+  &:nth-child(even) {
+    // background: #393939;
+    background: #393c43;
+    // padding-top: 6rem;
+    padding-top: 10vw;
+
+    .entry__list {
+      // padding-bottom: 11rem;
+      padding-bottom: 17vw;
+      grid-template-areas:
+        'small1 big big'
+        'small2 big big';
+    }
+
+    &:last-child .entry__list {
+      padding-bottom: 8rem;
+    }
+  }
+}
+
+.about p {
+  color: #f9fcfe;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin: auto;
+  max-width: 50rem;
+  padding: 4rem 0;
+}
+
+.entry__img {
+  overflow: hidden;
+}
+
+.entry__img--big {
+  grid-area: big;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.entry__img--small-1 {
+  grid-area: small1;
+}
+
+.entry__img--small-2 {
+  grid-area: small2;
+}
+
+.entry__list {
+  display: grid;
+  grid-template-areas:
+    'big big small1'
+    'big big small2';
+  grid-gap: 1rem;
+  padding: 5rem 4rem;
+  position: relative;
+
+  img {
+    filter: grayscale(100%);
+    transition: all .4s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      filter: none;
+      // transform: scale(1.05);
+    }
+  }
+}
+
+.block-revealer__element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+
+.work__entry:first-child:before {
+  animation: clip-header-anim .4s ease-out both 1s;
+}
+
+@keyframes clip-header-anim {
+  0% {
+    clip-path: polygon(100% 95%, 100% 100%, 0 100%, 0 95%);
+  }
+
+  100% {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 95%);
+  }
+}

@@ -1,16 +1,16 @@
-#header {
-	margin-top: 30px;
+body {
+  // background: $color-black;
+  // background: $color-black-2;
+  background: #282c34;
 }
 
-#footer {
-	margin-top: 30px;
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.gallery-image img{
-    display: block;
-    max-width: 100%;
-    height: auto;
+.main-wrapper {
+  max-width: 1440px;
+  margin: auto;
 }

@@ -2,121 +2,92 @@
 
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>{{ title|default("bawa") }}</title>
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>{{ title|default("bawa") }}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-		{# Customise the stylesheet for your site by editing /public/styles/site.sass #}
-		<link href="/styles/site.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Kanit:300,400" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta24/shoelace.css">
 
-		{# This file provides the default styling for the KeystoneJS Content Editor #}
-		{% if user and user.canAccessKeystone %}
-			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
-		{% endif %}
+    <link href="/styles/site.css" rel="stylesheet">
 
-		{# HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		   Safely remove this block if you are not targeting IE8 #}
-		<!--[if lt IE 9]>
-			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
-			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+    {# This file provides the default styling for the KeystoneJS Content Editor #}
+    {% if user and user.canAccessKeystone %}
+      <link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
+    {% endif %}
 
-		{# Include template-specific stylesheets by extending the css block #}
-		{% block css %}{% endblock %}
+    {# HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+       Safely remove this block if you are not targeting IE8 #}
+    <!--[if lt IE 9]>
+      <script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+      <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-		{# Add any other template-specific HEAD tags by extending the head block #}
-		{% block head %}{% endblock %}
-	</head>
-	<body>
+    {% block css %}{% endblock %}
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header class="header">
+        <div class="header__bg">
+          <div class="bg__inner">
+            <!-- <img class="header__bg is-active" src="https://source.unsplash.com/1200x800/?art" alt=""> -->
+            <img class="bg__img is-active" src="/images/header-bg-1.jpg" alt="">
+            <img class="bg__img" src="/images/tmp-img.png" alt="">
+            <img class="bg__img" src="/images/header-bg-2.jpg" alt="">
+            <img class="bg__img" src="/images/header-bg-3.jpg" alt="">
+          </div>
+        </div>
 
-		{# HEADER #}
-		<div id="header" class="container">
+        <div class="header__title">
+          <div class="title title-1">
+            <h1>BAWA</h1>
+          </div>
+          <div class="title title-2">
+            <h2>Collective</h2>
+          </div>
+        </div>
 
-			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
-			   ... or completely change this header to suit your design. #}
-			<div role="navigation" class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="/">bawa</a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-left">
-							{% for link in navLinks %}
-								<li class="{{ 'active' if link.key == section else '' }}">
-									<a href="{{ link.href }}">{{ link.label }}</a>
-								</li>
-							{% endfor %}
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							{% if user %}
-								{% if user.canAccessKeystone %}
-								<li><a href="/keystone">Open Keystone</a></li>
-								{% endif %}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-							{% else %}
-								<li><a href="/keystone/signin">Sign In</a></li>
-							{% endif %}
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__entry">
+              <a class="nav__link" href="#">Who are we</a>
+            </li>
+            <li class="nav__entry">
+              <a class="nav__link" href="#">Work</a>
+            </li>
+            <li class="nav__entry">
+              <a class="nav__link" href="#">In stock</a>
+            </li>
+            <li class="nav__entry">
+              <a class="nav__link" href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-		{# BODY #}
-		<div id="body">
-			{# NOTE:
-			   There is no .container wrapping class around body blocks to allow more flexibility in design.
-			   Remember to include it in your templates when you override the intro and content blocks! #}
+      <main class="main">
+        {{ FM.flashMessages(messages) }}
+        {% block content %}{% endblock %}
+      </main>
+    </div>
 
-			{# The Intro block appears above flash messages (used for temporary information display) #}
-			{% block intro %}{% endblock %}
+    {# The KeystoneJS Content Editor provides support for ks-editable data attributes,
+      which generate links to edit content for users who can access Keystone #}
+    {% if user and user.canAccessKeystone %}
+      <script src="/keystone/js/content/editor.js"></script>
+    {% endif %}
 
-			{# Flash messages allow you to display once-off status messages to users, e.g. form
-			   validation errors, success messages, etc. #}
-			{{ FM.flashMessages(messages) }}
+    <script src="/js/jquery/jquery-2.1.4.min.js"></script>
 
-			{# The content block should contain the body of your template"s content #}
-			{% block content %}{% endblock %}
-		</div>
-
-
-		{# FOOTER #}
-		<div id="footer" class="container">
-			{# You don"t _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it! #}
-			<p>Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.</p>
-		</div>
-
-
-		{# JAVASCRIPT #}
-
-		{# jQuery 1.11.3 is included by default, and required by both Bootstrap
-			and the KeystoneJS Content Editor. If you are not targeting IE8,
-			you can upgrade to 2.1.4 (also bundled) for better performance. #}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-
-		{# Customise which Bootstrap javascript files are served by including
-			them specifically here, instead of bootstrap-3.3.5.min.js #}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-
-		{# The KeystoneJS Content Editor provides support for ks-editable data attributes,
-			which generate links to edit content for users who can access Keystone #}
-		{% if user and user.canAccessKeystone %}
-			<script src="/keystone/js/content/editor.js"></script>
-		{% endif %}
-
-		{# Add scripts that are globally required by your site here. #}
-
-		{# Include template-specific javascript files by extending the js block #}
-		{% block js %}{% endblock %}
-	</body>
+    <script src="/js/base.js"></script>
+    <script src="/js/header.js"></script>
+    {% block js %}{% endblock %}
+    <script src="/js/app.js"></script>
+  </body>
 </html>
