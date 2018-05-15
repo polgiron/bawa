@@ -9,97 +9,59 @@
     margin-right: 1rem;
   }
 
+  &.is-active .nav__link {
+    // background: $color-white-2;
+    // color: black;
+    opacity: 1;
+  }
+
+  &:hover .nav__link {
+    opacity: 1;
+  }
+
   &:nth-child(1) .nav__link {
     transform: rotate(-4deg);
-
-    &:hover {
-      // background: #e74c3c;
-    }
   }
 
   &:nth-child(2) .nav__link {
     transform: rotate(1deg);
-
-    &:hover {
-      // background: #e67e22;
-    }
   }
 
   &:nth-child(3) .nav__link {
     transform: rotate(-3deg);
-
-    &:hover {
-      // background: #27ae60;
-    }
   }
 
   &:nth-child(4) .nav__link {
     transform: rotate(2deg);
-
-    &:hover {
-      // background: #2980b9;
-    }
   }
 
   &:nth-child(5) .nav__link {
     transform: rotate(3deg);
-
-    &:hover {
-      // background: #9b59b6;
-    }
   }
 }
 
 .nav__link {
   display: block;
-  // background: $color-black-2;
   color: $color-white-2;
   text-transform: uppercase;
   letter-spacing: 2px;
-  // font-size: 1rem;
   font-size: .8rem;
-  padding: .3em .5em;
-  font-family: 'Raleway', sans-serif;
+  padding: .3em .6em;
+  font-family: $font-family-title;
   transition: all .2s;
-  // font-weight: 400;
-  // border: 1px solid transparent;
   border: 1px solid rgba($color-white-2, .5);
-  // position: relative;
+  opacity: .6;
 
   &:hover {
     text-decoration: none;
-    // color: inherit;
     color: $color-white-2;
-    // color: $color-black;
-    // background: $color-white-2;
-    // border-color: rgba($color-white-2, .5);
-    // transform: scale(1.2);
-    transform: translateY(-10px);
-
-    // &:after {
-    //   opacity: 1;
-    //   transform: scale(1);
-    // }
   }
-
-  // &:after {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   border: 1px solid rgba($color-white-2, .7);
-  //   opacity: 0;
-  //   transition: all .2s;
-  //   transform: scale(.6);
-  // }
 }
 
 .home-nav {
   position: absolute;
   bottom: 9vw;
-  right: 3rem;
+  right: 2.5rem;
   transform: rotate(-4.5deg);
   z-index: 3;
 
@@ -118,8 +80,13 @@
     // background: $color-white-2;
     background: $color-black-2;
     border: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
+    opacity: 1;
+
+    &:hover {
+      background: $color-gray;
+    }
   }
 }
 

@@ -43,31 +43,21 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__entry">
-                <a class="nav__link" href="/">Who are we</a>
+                <a class="nav__link" href="/">Who are we?</a>
               </li>
-              <li class="nav__entry">
-                <a class="nav__link" href="/work">Work</a>
-              </li>
-              <li class="nav__entry">
-                <a class="nav__link" href="#">In stock</a>
-              </li>
-              <li class="nav__entry">
-                <a class="nav__link" href="#">Contact</a>
-              </li>
+              {% for link in navLinks %}
+                <li class="nav__entry {{ 'is-active' if link.key == page else '' }}">
+                  <a class="nav__link" href="{{ link.href }}">{{ link.label }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </nav>
         </div>
       </div>
       <header class="header">
+        <!-- <img class="header__bg" src="/images/cloud1.jpg" alt=""> -->
         <div class="header__bg">
-          <div class="bg__inner">
-            <!-- <img class="header__bg is-active" src="https://source.unsplash.com/1200x800/?art" alt=""> -->
-            <!-- <img class="bg__img is-active" src="/images/header-bg-1.jpg" alt=""> -->
-            <img class="bg__img is-active" src="/images/cloud1.jpg" alt="">
-            <img class="bg__img" src="/images/tmp-img.png" alt="">
-            <img class="bg__img" src="/images/cloud1.jpg" alt="">
-            <img class="bg__img" src="/images/header-bg-2.jpg" alt="">
-          </div>
+          <img src="https://source.unsplash.com/collection/2113211/1200x800?sig=1" alt="">
         </div>
 
         <div class="header__title">
@@ -81,18 +71,11 @@
 
         <nav class="nav home-nav">
           <ul class="nav__list">
-            <li class="nav__entry">
-              <a class="nav__link" href="/">Who are we</a>
-            </li>
-            <li class="nav__entry">
-              <a class="nav__link" href="/work">Work</a>
-            </li>
-            <li class="nav__entry">
-              <a class="nav__link" href="#">In stock</a>
-            </li>
-            <li class="nav__entry">
-              <a class="nav__link" href="#">Contact</a>
-            </li>
+            {% for link in navLinks %}
+              <li class="nav__entry {{ 'is-active' if link.key == page else '' }}">
+                <a class="nav__link" href="{{ link.href }}">{{ link.label }}</a>
+              </li>
+            {% endfor %}
           </ul>
         </nav>
       </header>
@@ -100,6 +83,10 @@
       <main class="main">
         {{ FM.flashMessages(messages) }}
         {% block content %}{% endblock %}
+
+        <footer class="footer">
+          <p>Copyright BAWA collective sisi la famille</p>
+        </footer>
       </main>
     </div>
 

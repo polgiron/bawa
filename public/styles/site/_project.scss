@@ -1,4 +1,4 @@
-.project {
+body:not(.home) {
   .header__title {
     display: none;
   }
@@ -8,7 +8,7 @@
   }
 
   .main,
-  .project__title {
+  .main__title {
     animation: .8s main-fade-in $easing both $load-anim-delay + .1s;
   }
 
@@ -16,7 +16,7 @@
     margin-top: -25vh;
   }
 
-  .project__title {
+  .main__title {
     animation-delay: $load-anim-delay + .2s;
   }
 }
