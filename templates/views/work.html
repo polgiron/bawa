@@ -1,78 +1,77 @@
 {% extends "layouts/default.html" %}
 
 {% block js %}
-  <script src="/js/reveal/anime.min.js"></script>
-  <script src="/js/reveal/scrollMonitor.js"></script>
-  <script src="/js/reveal/main.js"></script>
+  <!-- <script src="/js/reveal/anime.min.js"></script> -->
+  <!-- <script src="/js/reveal/scrollMonitor.js"></script> -->
+  <!-- <script src="/js/reveal/main.js"></script> -->
   <script src="/js/reveal.js"></script>
 {% endblock %}
 
 {% block content %}
-  <div class="work">
-    <ul class="work__list">
-      <li class="about section-clip">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </li>
-      <li class="work__entry section-clip">
-        <!-- <h3 class="entry__title heading-3" id="test">Projet de ouf</h3> -->
-        <!-- <svg class="entry__clip" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polygon points="0,100 100,100 100,0" />
-        </svg> -->
-        <ul class="entry__list">
-          <li class="entry__img entry__img--big">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=1" alt="">
-            <!-- <h3 class="entry__title heading-3">Projet de ouf</h3> -->
-          </li>
-          <li class="entry__img entry__img--small-1">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=2" alt="">
-          </li>
-          <li class="entry__img entry__img--small-2">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=3" alt="">
-          </li>
-          <!-- <li class="entry__clip"></li> -->
-        </ul>
-      </li>
-      <li class="work__entry section-clip">
-        <ul class="entry__list">
-          <li class="entry__img entry__img--big">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=4" alt="">
-          </li>
-          <li class="entry__img entry__img--small-1">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=5" alt="">
-          </li>
-          <li class="entry__img entry__img--small-2">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=6" alt="">
-          </li>
-        </ul>
-      </li>
-      <li class="work__entry section-clip">
-        <ul class="entry__list">
-          <li class="entry__img entry__img--big">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=7" alt="">
-          </li>
-          <li class="entry__img entry__img--small-1">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=8" alt="">
-          </li>
-          <li class="entry__img entry__img--small-2">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=9" alt="">
-          </li>
-        </ul>
-      </li>
-      <li class="work__entry section-clip">
-        <ul class="entry__list">
-          <li class="entry__img entry__img--big">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=10" alt="">
-          </li>
-          <li class="entry__img entry__img--small-1">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=11" alt="">
-          </li>
-          <li class="entry__img entry__img--small-2">
-            <img src="https://source.unsplash.com/800x600/?colorful&sig=12" alt="">
-          </li>
-        </ul>
-      </li>
-    </ul>
+  <div class="main__title">
+    <div class="inner">
+      <h1 class="heading-1">Work</h1>
+    </div>
   </div>
+
+  <section class="section section--text">
+    <div class="section__inner">
+      <p class="introduction">
+        This is our work, it's really good.
+      </p>
+      <p class="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--bigpicture">
+    <a href="#">
+      <img src="/images/cloud1.jpg" alt="">
+      <div class="work__text">
+        <div class="text__element work__title">
+          <span>The clouds project</span>
+        </div>
+        <br>
+        <div class="text__element work__date">
+          <span>2016</span>
+        </div>
+      </div>
+      <div class="text__element work__more">
+        <span>more info</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="section section--bigpicture">
+    <a href="#">
+      <img src="/images/machinerie.jpg" alt="">
+      <div class="work__text">
+        <div class="text__element work__title">
+          <span>La machinerie</span>
+        </div><br><div class="text__element work__date">
+          <span>2016</span>
+        </div>
+      </div>
+      <div class="text__element work__more">
+        <span>more info</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="section section--bigpicture">
+    <a href="#">
+      <img src="/images/cloud3.jpg" alt="">
+      <div class="work__text">
+        <div class="text__element work__title">
+          <span>La blabla</span>
+        </div><br><div class="text__element work__date">
+          <span>2016</span>
+        </div>
+      </div>
+      <div class="text__element work__more">
+        <span>more info</span>
+      </div>
+    </a>
+  </section>
 {% endblock %}

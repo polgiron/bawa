@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{ title|default("bawa") }}</title>
+    <title>{{ title|default("BAWA Collective") }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Kanit:300,400" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta24/shoelace.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300|Source+Sans+Pro:200" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300|Source+Sans+Pro:200|Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta24/shoelace.css"> -->
 
     <link href="/styles/site.css" rel="stylesheet">
 
@@ -31,16 +35,38 @@
     {% block css %}{% endblock %}
     {% block head %}{% endblock %}
   </head>
-  <body>
+  <body class="{% block pageClass %}{% endblock %}">
     <div class="main-wrapper">
+      <div class="sticky-header">
+        <div class="inner">
+          <h4 class="sticky-header__title">BAWA <span>Collective</span></h4>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__entry">
+                <a class="nav__link" href="/">Who are we</a>
+              </li>
+              <li class="nav__entry">
+                <a class="nav__link" href="/work">Work</a>
+              </li>
+              <li class="nav__entry">
+                <a class="nav__link" href="#">In stock</a>
+              </li>
+              <li class="nav__entry">
+                <a class="nav__link" href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
       <header class="header">
         <div class="header__bg">
           <div class="bg__inner">
             <!-- <img class="header__bg is-active" src="https://source.unsplash.com/1200x800/?art" alt=""> -->
-            <img class="bg__img is-active" src="/images/header-bg-1.jpg" alt="">
+            <!-- <img class="bg__img is-active" src="/images/header-bg-1.jpg" alt=""> -->
+            <img class="bg__img is-active" src="/images/cloud1.jpg" alt="">
             <img class="bg__img" src="/images/tmp-img.png" alt="">
+            <img class="bg__img" src="/images/cloud1.jpg" alt="">
             <img class="bg__img" src="/images/header-bg-2.jpg" alt="">
-            <img class="bg__img" src="/images/header-bg-3.jpg" alt="">
           </div>
         </div>
 
@@ -53,13 +79,13 @@
           </div>
         </div>
 
-        <nav class="nav">
+        <nav class="nav home-nav">
           <ul class="nav__list">
             <li class="nav__entry">
-              <a class="nav__link" href="#">Who are we</a>
+              <a class="nav__link" href="/">Who are we</a>
             </li>
             <li class="nav__entry">
-              <a class="nav__link" href="#">Work</a>
+              <a class="nav__link" href="/work">Work</a>
             </li>
             <li class="nav__entry">
               <a class="nav__link" href="#">In stock</a>

@@ -1,7 +1,12 @@
 $color-white: #fff;
-$color-white-2: #f9fcfe;
+// $color-white-2: #f9fcfe;
+$color-white-2: #CAD3C8;
+$color-white-3: #919d91;
 $color-black: #000;
 $color-black-2: #1c1c1c;
+$color-black-3: #030102;
+// $color-gray: #393c43;
+$color-gray: #282c34;
 
 // $content-max-width: 1600px;
 $content-max-width: 1400px;
@@ -9,10 +14,14 @@ $header-height: 56px;
 $padding-section: 4rem;
 
 // $clip-height: 6rem;
-$clip-height: 10vw;
+// $clip-height: 10vw;
+
+$load-anim-delay: .1s;
+$easing: cubic-bezier(0.86, 0, 0.07, 1);
 
 // $font-family: 'Open Sans', sans-serif;
-$font-family: 'Raleway', sans-serif;
+$font-family-title: 'Raleway', sans-serif;
+$font-family: 'Source Sans Pro', sans-serif;
 
 $screen-sm-min: 768px;
 $screen-xs-max: ($screen-sm-min - 1);

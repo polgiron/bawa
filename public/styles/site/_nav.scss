@@ -1,0 +1,138 @@
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.nav__entry {
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  &:nth-child(1) .nav__link {
+    transform: rotate(-4deg);
+
+    &:hover {
+      // background: #e74c3c;
+    }
+  }
+
+  &:nth-child(2) .nav__link {
+    transform: rotate(1deg);
+
+    &:hover {
+      // background: #e67e22;
+    }
+  }
+
+  &:nth-child(3) .nav__link {
+    transform: rotate(-3deg);
+
+    &:hover {
+      // background: #27ae60;
+    }
+  }
+
+  &:nth-child(4) .nav__link {
+    transform: rotate(2deg);
+
+    &:hover {
+      // background: #2980b9;
+    }
+  }
+
+  &:nth-child(5) .nav__link {
+    transform: rotate(3deg);
+
+    &:hover {
+      // background: #9b59b6;
+    }
+  }
+}
+
+.nav__link {
+  display: block;
+  // background: $color-black-2;
+  color: $color-white-2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  // font-size: 1rem;
+  font-size: .8rem;
+  padding: .3em .5em;
+  font-family: 'Raleway', sans-serif;
+  transition: all .2s;
+  // font-weight: 400;
+  // border: 1px solid transparent;
+  border: 1px solid rgba($color-white-2, .5);
+  // position: relative;
+
+  &:hover {
+    text-decoration: none;
+    // color: inherit;
+    color: $color-white-2;
+    // color: $color-black;
+    // background: $color-white-2;
+    // border-color: rgba($color-white-2, .5);
+    // transform: scale(1.2);
+    transform: translateY(-10px);
+
+    // &:after {
+    //   opacity: 1;
+    //   transform: scale(1);
+    // }
+  }
+
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   border: 1px solid rgba($color-white-2, .7);
+  //   opacity: 0;
+  //   transition: all .2s;
+  //   transform: scale(.6);
+  // }
+}
+
+.home-nav {
+  position: absolute;
+  bottom: 9vw;
+  right: 3rem;
+  transform: rotate(-4.5deg);
+  z-index: 3;
+
+  .nav__entry {
+    animation: .2s nav-fade-in ease-out both;
+
+    @for $i from 1 to 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: 1s + $i * 100ms;
+      }
+    }
+  }
+
+  .nav__link {
+    // color: $color-black-2;
+    // background: $color-white-2;
+    background: $color-black-2;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@keyframes nav-fade-in {
+  from {
+    transform: translate3d(0, 50%, 0);
+    // transform: scale(.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    // transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,13 +1,14 @@
 App.App = function() {
-  // try {
+  try {
     new App.Header();
-  // } catch (e) {
-  //
-  // } finally {
-  //
-  // }
+    new App.Project();
+    new App.Reveal();
+  } catch (e) {
 
-  new App.Reveal();
+  } finally {
+
+  }
+
 };
 
 var app = new App.App();

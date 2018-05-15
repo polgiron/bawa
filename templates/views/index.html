@@ -1,5 +1,35 @@
 {% extends "layouts/default.html" %}
 
+{% block js %}
+  <script src="/js/reveal/anime.min.js"></script>
+  <script src="/js/reveal/scrollMonitor.js"></script>
+  <script src="/js/reveal/main.js"></script>
+  <script src="/js/reveal.js"></script>
+{% endblock %}
+
+{% block pageClass %}home{% endblock %}
+
 {% block content %}
-  index
+  <section class="section section--text">
+    <div class="section__inner">
+      <p class="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--bigpicture">
+    <img src="/images/cloud2.jpg" alt="">
+  </section>
+
+  <section class="section section--text">
+    <div class="section__inner">
+      <p class="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p class="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </section>
 {% endblock %}
