@@ -1,12 +1,12 @@
 App.App = function() {
-  try {
-    new App.Header();
+  new App.Header();
+
+  if ($('body').hasClass('work')) {
     new App.Work();
+  }
+
+  if ($('body').hasClass('project')) {
     new App.Project();
-  } catch (e) {
-
-  } finally {
-
   }
 };
 
