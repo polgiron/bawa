@@ -82,3 +82,40 @@ ul {
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
   }
 }
+
+body:not(.home) {
+  .header__title {
+    display: none;
+  }
+
+  .sticky-header {
+    display: block;
+  }
+
+  .main,
+  .main__title {
+    animation: .8s main-fade-in $easing both $load-anim-delay + .1s;
+  }
+
+  .main {
+    margin-top: -25vh;
+  }
+
+  .main__title {
+    animation-delay: $load-anim-delay + .2s;
+  }
+
+  .home-nav {
+    display: none;
+  }
+}
+
+button {
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover {
+    background: transparent;
+  }
+}

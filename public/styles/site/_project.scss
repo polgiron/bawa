@@ -1,36 +1,3 @@
-body:not(.home) {
-  .header__title {
-    display: none;
-  }
-
-  .sticky-header {
-    display: block;
-  }
-
-  .main,
-  .main__title {
-    animation: .8s main-fade-in $easing both $load-anim-delay + .1s;
-  }
-
-  .main {
-    margin-top: -25vh;
-  }
-
-  .main__title {
-    animation-delay: $load-anim-delay + .2s;
-  }
-}
-
-button {
-  &:focus {
-    box-shadow: none;
-  }
-
-  &:hover {
-    background: transparent;
-  }
-}
-
 .tags {
   text-align: left;
   display: flex;
