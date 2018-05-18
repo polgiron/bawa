@@ -103,6 +103,24 @@
 
   h1 {
     font-size: 8rem;
+
+    span {
+      display: inline-block;
+    }
+
+    span:nth-child(2) {
+      margin: 0 -3.3rem 0 -1.8rem;
+      // margin: 0 -4rem 0 -2.4rem;
+      // margin: 0 -3.5rem 0 -2.5rem;
+      // transform: translateY(10%);
+    }
+
+    span:nth-child(4) {
+      margin: 0 .2rem 0 -3.3rem;
+      // margin: 0 -1rem 0 -4rem;
+      // margin: 0 -.5rem 0 -3.5rem;
+      // transform: translateY(10%);
+    }
   }
 
   h2 {
