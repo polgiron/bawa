@@ -6,6 +6,7 @@ exports = module.exports = function (req, res) {
 
   locals.page = 'work';
   locals.title = 'BAWA Collective — Work';
+  locals.heroBg = 'https://source.unsplash.com/collection/2113211/1200x800?sig=1';
 
   view.render('work');
 };

@@ -1,0 +1,121 @@
+body.modal-is-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color-black-2, .8);
+  display: flex;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+
+    .contact__entry {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    .dialog__close {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.dialog {
+  margin: auto;
+  max-width: 52rem;
+  color: $color-white-2;
+  position: relative;
+}
+
+.dialog__close {
+  position: absolute;
+  top: -.8rem;
+  right: -.8rem;
+  width: 2rem;
+  height: 2rem;
+  background: $color-white-2;
+  border-radius: 50%;
+  // transform: translate3d(40%, -40%, 0);
+  display: flex;
+  cursor: pointer;
+  // animation: close-button-anim .2s linear reverse both;
+  transition: all .1s ease-out .5s;
+  opacity: 0;
+  transform: scale(.6);
+  z-index: 9999;
+
+  i {
+    color: $color-black-2;
+    margin: auto;
+  }
+
+  &:hover {
+    animation: close-button-anim .3s ease-out both;
+  }
+}
+
+.contact__entry {
+  // padding: 1em;
+  font-size: 1.8rem;
+  font-family: $font-family;
+  // text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding-right: 1.2em;
+  opacity: 0;
+  transform: translate3d(0, 80%, 0);
+  transition: all .2s ease-out;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:nth-child(1) {
+    background: $color-black;
+    transition-delay: .2s;
+  }
+
+  &:nth-child(2) {
+    background: $color-black-2;
+    transition-delay: .3s;
+  }
+
+  &:nth-child(3) {
+    background: $color-gray;
+    transition-delay: .4s;
+  }
+
+  i {
+    // margin-right: .4em;
+    padding: .6em;
+    font-size: 1.4em;
+  }
+}
+
+@keyframes close-button-anim {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    opacity: .8;
+    transform: scale(.85) rotate(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
